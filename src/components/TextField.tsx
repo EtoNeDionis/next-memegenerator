@@ -8,7 +8,7 @@ const TextField = () => {
 
     return (
         <Draggable nodeRef={nodeRef}>
-            <div className="d-inline-block drop-shadow" style={{textShadow: "1px 1px 2px black"}} ref={nodeRef}>
+            <div className="position-absolute drop-shadow" style={{textShadow: "1px 1px 2px black"}} ref={nodeRef}>
                 {editMode ? (
                     <input
                         onBlur={() => setEditMode(false)}

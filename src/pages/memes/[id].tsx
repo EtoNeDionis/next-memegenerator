@@ -56,9 +56,8 @@ const MemePage = () => {
     return (
         <Layout>
             <main className="bg-dark min-vh-100 text-white">
-                <div ref={memeRef} className="">
+                <div style={{width: `fit-content`}} ref={memeRef}>
                     <Image
-                        className="img-fluid"
                         src={meme.url}
                         width={meme.width}
                         height={meme.height}
