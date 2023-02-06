@@ -7,7 +7,7 @@ const TextField = () => {
     const nodeRef = useRef(null);
 
     return (
-        <Draggable nodeRef={nodeRef}>
+        <Draggable  nodeRef={nodeRef}>
             <div className="position-absolute" style={{textShadow: "1px 1px 2px black"}} ref={nodeRef}>
                 {editMode ? (
                     <input
@@ -23,6 +23,7 @@ const TextField = () => {
                     <h1
                         onDoubleClick={() => setEditMode(true)}
                         onTouchEnd={() => setEditMode(true)}
+                        style={{fontSize: "calc((1vw + 1vh) * 1.5)"}}
                     >
                         {text}
                     </h1>
