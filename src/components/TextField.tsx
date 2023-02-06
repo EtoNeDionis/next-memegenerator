@@ -8,17 +8,21 @@ const TextField = () => {
 
     return (
         <Draggable nodeRef={nodeRef}>
-            <div className="position-absolute drop-shadow" style={{textShadow: "1px 1px 2px black"}} ref={nodeRef}>
+            <div className="position-absolute" style={{textShadow: "1px 1px 2px black"}} ref={nodeRef}>
                 {editMode ? (
                     <input
+                        style={{cursor:"pointer"}}
                         onBlur={() => setEditMode(false)}
                         onChange={(e) => setText(e.target.value)}
                         value={text}
                         onDoubleClick={() => setEditMode(false)}
+                        onTouchEnd={() => setEditMode(false)}
+                        autoFocus={true}
                     />
                 ) : (
                     <h1
                         onDoubleClick={() => setEditMode(true)}
+                        onTouchEnd={() => setEditMode(true)}
                     >
                         {text}
                     </h1>

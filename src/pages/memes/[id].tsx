@@ -62,6 +62,7 @@ const MemePage = () => {
                         width={meme.width}
                         height={meme.height}
                         alt={meme.name}
+                        style={{width: "100%", height: "auto"}}
                     />
                     {Array(countTextFields)
                         .fill(0)
