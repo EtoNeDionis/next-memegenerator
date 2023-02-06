@@ -56,7 +56,7 @@ const MemePage = () => {
         <Layout>
             <main className="bg-dark min-vh-100 text-white">
                 <div
-                 className="overflow-hidden" style={{ width: `fit-content`, height: "auto" }} 
+                 className="overflow-hidden " style={{ width: `fit-content`, height: "auto" }} 
                  ref={memeRef}>
                     <Image
                         width={400}
