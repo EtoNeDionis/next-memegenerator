@@ -15,7 +15,6 @@ import { Button, Spinner } from "react-bootstrap";
 import TextField from "@/components/TextField";
 import exportAsImage from "@/assets/exportAsImage";
 
-
 const MemePage = () => {
     const { query } = useRouter();
     let { memes } = useContext(MemeContext);
@@ -56,14 +55,17 @@ const MemePage = () => {
     return (
         <Layout>
             <main className="bg-dark min-vh-100 text-white">
-                <div style={{width: `fit-content`}} ref={memeRef}>
+                <div
+                 className="overflow-hidden" style={{ width: `fit-content`, height: "auto" }} 
+                 ref={memeRef}>
                     <Image
+                        width={400}
+                        height={500}
                         src={meme.url}
-                        width={meme.width}
-                        height={meme.height}
                         alt={meme.name}
-                        style={{width: "100%", height: "auto"}}
+                        style={{ width: "100%", height: "auto" }}
                     />
+
                     {Array(countTextFields)
                         .fill(0)
                         .map((textField, index) => (
@@ -74,7 +76,9 @@ const MemePage = () => {
                 <Button onClick={addText}>Add Text</Button>
                 <Button
                     variant="success"
-                    onClick={() => exportAsImage(memeRef.current, "Meme Generated On ...")}
+                    onClick={() =>
+                        exportAsImage(memeRef.current, "Meme Generated On ...")
+                    }
                 >
                     Save
                 </Button>

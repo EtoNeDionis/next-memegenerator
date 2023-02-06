@@ -8,7 +8,7 @@ const TextField = () => {
 
     return (
         <Draggable  nodeRef={nodeRef}>
-            <div className="position-absolute" style={{textShadow: "1px 1px 2px black"}} ref={nodeRef}>
+            <div className="position-absolute" style={{textShadow: "1px 1px 4px black"}} ref={nodeRef}>
                 {editMode ? (
                     <input
                         style={{cursor:"pointer"}}
